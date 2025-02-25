@@ -18,8 +18,6 @@ public class LionTest {
     @Mock
     private Feline mockFeline;
 
-    private Lion l;
-
     @Before
     public void setup() throws Exception {
         when(mockFeline.getKittens()).thenReturn(2);
@@ -91,6 +89,8 @@ public class LionTest {
     @Test(expected = Exception.class)
     public void testDoesHaveManeInvalidSex() throws Exception {
 
-        Lion l = new Lion("Незнакомый пол", mockFeline);
+        new Lion("Незнакомый пол", mockFeline);
     }
+
+
 }
